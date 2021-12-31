@@ -23,7 +23,6 @@ class DashboardCotroller extends Controller
             $data['details'] = Detail::where('user_id', Auth::user()->id)->first();
             $data['gigs'] = Gig::where('user_id', Auth::user()->id)->get();
             $data['orders'] = Order::where('client_id', Auth::user()->id)->get();
-
             return view('dashboard', $data);
         }else{
             return redirect("login")->with('danger', 'Opps! You do not have access');

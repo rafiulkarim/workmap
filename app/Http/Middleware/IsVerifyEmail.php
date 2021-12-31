@@ -19,6 +19,7 @@ class IsVerifyEmail
     public function handle(Request $request, Closure $next)
     {
         if (!Auth::user()->is_email_verified) {
+            auth()->logout();
             return redirect()->route('login')
                 ->with('danger', 'You need to confirm your account. We have sent you an activation link,
                 please check your email.');

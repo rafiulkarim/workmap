@@ -58,22 +58,24 @@
                             <a class="nav-link" href="{{ route('contact') }}">Contact</a>
                         </li>
                         @auth
-                            @if(Auth::user()->userRole == 2)
+                            @if(Auth::user()->userRole == 2 && Auth::user()->is_email_verified == 1)
                                 <li class="nav-item active">
                                     <a class="nav-link" href="{{ route('my_order') }}">My Order</a>
                                 </li>
                             @endif
-                            <li class="nav-item active pl-2">
-                            </li>
+                            @if(Auth::user()->is_email_verified == 1)
                             <li class="nav-item active">
                                 <a class="nav-link" href="{{ route('message') }}">Message</a>
                             </li>
+                            @endif
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     {{ Auth::user()->name }}
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('profile') }}">Profile</a>
+                                    @if(Auth::user()->is_email_verified == 1)
+                                        <a class="dropdown-item" href="{{ route('profile') }}">Profile</a>
+                                    @endif
                                     <a class="dropdown-item" href="{{ route('logout') }}">Log out</a>
                                 </div>
                             </li>
