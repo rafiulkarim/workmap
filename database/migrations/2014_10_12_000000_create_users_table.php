@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->integer('user_role')->comment('0 = admin, 1 = client, 2 = freelancer');
+            $table->integer('userrole')->comment('0 = admin, 1 = client, 2 = freelancer');
             $table->tinyInteger('is_online')->default(0)->comment('0=offline, 1=online');
             $table->boolean('is_email_verified')->default(0);
             $table->rememberToken();

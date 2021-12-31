@@ -43,7 +43,7 @@ class Registration extends Controller
             'name' => $data['user_name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'user_role' => $data['user_type']
+            'userrole' => $data['user_type']
         ]);
     }
 

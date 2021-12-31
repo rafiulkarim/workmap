@@ -38,15 +38,15 @@ class HelperController extends Controller
     }
 
     public static function total_user(){
-        return User::where('user_role', '!=', 0)->count();
+        return User::where('userrole', '!=', 0)->count();
     }
 
     public static function freelancer(){
-        return User::where('user_role', '=', 2)->count();
+        return User::where('userrole', '=', 2)->count();
     }
 
     public static function client(){
-        return User::where('user_role', '=', 1)->count();
+        return User::where('userrole', '=', 1)->count();
     }
 
     public static function reviewed(){

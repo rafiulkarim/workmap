@@ -35,12 +35,6 @@
                     <img id="brand-logo" src="{{ asset('assets/img/logo.png') }}" alt="">
                 </a>
                 @endauth
-                <form class="form-inline">
-                    <div class="form-group mb-2">
-                        <input type="password" class="form-control" placeholder="Search here">
-                    </div>
-                    <button type="submit" class="btn search-btn mb-2">Search</button>
-                </form>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -58,7 +52,7 @@
                             <a class="nav-link" href="{{ route('contact') }}">Contact</a>
                         </li>
                         @auth
-                            @if(Auth::user()->user_role == 2 )
+                            @if(Auth::user()->userrole == 2 )
                                 <li class="nav-item active">
                                     <a class="nav-link" href="{{ route('my_order') }}">My Order</a>
                                 </li>
@@ -75,7 +69,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}">Log out</a>
                                 </div>
                             </li>
-                            @if(Auth::user()->user_role == 1)
+                            @if(Auth::user()->userrole == 1)
                                 <?php
                                     $qty = 0 ;
                                     foreach ((array) session('cart') as $id => $details){
