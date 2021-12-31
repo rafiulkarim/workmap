@@ -21,13 +21,13 @@
             </div>
             <div class="col-md-8 dashboard-gig">
                 <div class="pb-2 text-right">
-                    @if(Auth::user()->Userrole == 1)
+                    @if(Auth::user()->userrole == 1)
                         @if(!$details)
                             <div class="alert alert-danger">
                                 Add Your details to buy service <a href="{{ route('profile') }}">Click here</a>
                             </div>
                         @endif
-                    @elseif(Auth::user()->Userrole != 1)
+                    @elseif(Auth::user()->userrole != 1)
                         @if($details)
                             <a href="{{ route('create_gig') }}" class="btn search-btn"> + Create Gig</a>
                         @else
@@ -37,7 +37,7 @@
                         @endif
                     @endif
                 </div>
-                @if(Auth::user()->Userrole == 2)
+                @if(Auth::user()->userrole == 2)
                     <table class="table">
                         <thead>
                         <tr class="text-center">
@@ -80,7 +80,7 @@
                         @endforeach
                         </tbody>
                     </table>
-                @elseif(Auth::user()->Userrole == 1)
+                @elseif(Auth::user()->userrole == 1)
                     <table class="table">
                         <thead>
                             <tr class="text-center">

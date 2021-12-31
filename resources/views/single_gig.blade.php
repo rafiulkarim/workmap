@@ -14,7 +14,7 @@
                         <img src="{{ asset('assets/img/gig/'.$single_gig_datas->image) }}" width="100%" alt="">
                         <h4>About this Gig</h4>
                         <p>{!! $single_gig_datas->description !!}</p>
-                        @if(Auth::user()->Userrole != 2)
+                        @if(Auth::user()->userrole != 2)
                         <h3><b>About The Seller</b></h3>
                         <ul class="list-inline">
                             <li class="list-inline-item">
@@ -103,7 +103,7 @@
                                 <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
                                 Ordered: ({{$order}})
                             </p>
-                            @if(Auth::user()->Userrole != 2)
+                            @if(Auth::user()->userrole != 2)
                                 @if($details)
                                     <button class="btn search-btn btn-block addToCart">Buy Service (${{ $single_gig_datas->price }})</button>
                                 @else

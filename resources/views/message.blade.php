@@ -56,7 +56,7 @@
                 <div class="card">
                     <div class="row g-0">
                         <div class="col-12 col-lg-5 col-xl-3 border-right">
-                            @if(Auth::user()->Userrole == 1)
+                            @if(Auth::user()->userrole == 1)
                                 @foreach($freelancers as $freelancer)
                                     <a href="{{ route('message', $freelancer->freelancer_id) }}" class="list-group-item list-group-item-action border-0">
                                         <div id="message-count-{{ $freelancer->freelancer_id }}">
@@ -79,7 +79,7 @@
                                         </div>
                                     </a>
                                 @endforeach
-                            @elseif(Auth::user()->Userrole == 2)
+                            @elseif(Auth::user()->userrole == 2)
                                 @foreach($clients as $client)
                                     <a href="{{ route('message', $client->client_id) }}" class="list-group-item list-group-item-action border-0">
                                         <div id="message-count-{{ $client->client_id }}">
