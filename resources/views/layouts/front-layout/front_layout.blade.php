@@ -58,7 +58,7 @@
                             <a class="nav-link" href="{{ route('contact') }}">Contact</a>
                         </li>
                         @auth
-                            @if(Auth::user()->userRole == 2 )
+                            @if(Auth::user()->user_role == 2 )
                                 <li class="nav-item active">
                                     <a class="nav-link" href="{{ route('my_order') }}">My Order</a>
                                 </li>
@@ -75,7 +75,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}">Log out</a>
                                 </div>
                             </li>
-                            @if(Auth::user()->userRole == 1)
+                            @if(Auth::user()->user_role == 1)
                                 <?php
                                     $qty = 0 ;
                                     foreach ((array) session('cart') as $id => $details){

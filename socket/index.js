@@ -81,7 +81,8 @@ io.on('connection', function (socket) {
                 sockets[socket.handshake.query.user_id].splice(index, 1);
             }
         }
-        con.query(`UPDATE users SET is_online=0 WHERE id=${socket.handshake.query.user_id}`, function (err, res){
+        con.query(`UPDATE user
+    s SET is_online=0 WHERE id=${socket.handshake.query.user_id}`, function (err, res){
             if (err)
                 throw err;
             console.log('user Disconnected', socket.handshake.query.user_id);
